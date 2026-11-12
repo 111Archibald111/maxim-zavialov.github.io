@@ -3,7 +3,7 @@
    ========================================= */
 body {
     font-family: Arial, sans-serif;
-    background: #e9e9e9; /* Светло-серый фон как на макете */
+    background: #e9e9e9; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,34 +22,6 @@ body {
 .logo-area { display: flex; align-items: center; gap: 15px; color: #555; }
 .logo-square { width: 60px; height: 60px; background: #888; }
 .phones { text-align: right; font-size: 24px; color: #777; line-height: 1.2; }
-
-/* Горизонтальное меню */
-.nav-bar { background: #777; padding: 15px 0; }
-.nav-bar ul { 
-    list-style: none; 
-    display: flex; 
-    justify-content: center; 
-    gap: 30px; 
-    margin: 0; 
-    padding: 0; 
-    flex-wrap: wrap; /* Чтобы меню не ломалось на телефонах */
-}
-.nav-bar a { color: white; text-decoration: none; font-size: 18px; }
-.nav-bar a:hover { text-decoration: underline; }
-
-/* Центральная рабочая область */
-.main-content { 
-    flex: 1; /* Прижимает подвал к низу */
-    max-width: 1000px; 
-    margin: 30px auto; 
-    padding: 30px; 
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 90%;
-    box-sizing: border-box;
-}
-.main-content h1 { margin-top: 0; color: #333; text-align: center;}
 
 /* Подвал */
 .footer { 
