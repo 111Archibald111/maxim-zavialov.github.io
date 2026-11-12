@@ -6,8 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Меню навигации -->
-    <nav>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo-area">
+            <div class="logo-square"></div>
+            <div>
+                <h2 style="margin:0; font-weight:normal;">Портфолио<br>студента</h2>
+                <small style="font-size: 10px;">Выполнил: Завьялов М.Д.</small>
+            </div>
+        </div>
+        <div class="phones">
+            Группа: ПРОГ-С-24
+        </div>
+    </header>
+
+    <!-- Меню -->
+    <nav class="nav-bar">
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="conference.html">Конференция</a></li>
@@ -16,16 +30,44 @@
         </ul>
     </nav>
 
-    <main>
+    <!-- Основной контент -->
+    <main class="main-content">
         <h1>Добро пожаловать на мой сайт!</h1>
         
+        <!-- Добавляем круги для красоты, как на макете -->
+        <div class="hero">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="circle c4"></div>
+            <div class="circle c5"></div>
+        </div>
+
         <div class="student-info">
             <h2>Информация о студенте</h2>
             <p><strong>Фамилия И.О.:</strong> Завьялов Максим Дмитриевич</p>
             <p><strong>Номер группы:</strong> ПРОГ-С-24</p>
-            <p><strong>Кафедра:</strong> <a href="https://uni-dubna.ru/faculties/institut-sistemnogo-analiza-i-upravleniya" target="_blank">ИСАУ</a></p>
+            <p><strong>Кафедра:</strong> <a href="https://uni-dubna.ru/faculties/institut-sistemnogo-analiza-i-upravleniya" target="_blank">ИСАУ (институт системного анализа и управления)</a></p>
             <p><strong>Сервер ВУЗа:</strong> <a href="https://uni-dubna.ru/" target="_blank">Государственный университет "Дубна"</a></p>
         </div>
     </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div>
+            © 2026 Портфолио студента<br>
+            Группа ПРОГ-С-24
+        </div>
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="conference.html">Конференция</a>
+            <a href="task7.html">Шаблон</a>
+            <a href="gallery.html">Фотогалерея</a>
+        </div>
+        <div>
+            Разработка сайта —<br>
+            Завьялов М.Д.
+        </div>
+    </footer>
 </body>
 </html>

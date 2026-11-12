@@ -4,30 +4,24 @@
     <meta charset="UTF-8">
     <title>Регистрация на конференцию</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Стили формы (Flexbox и Grid) */
-        .conf-container { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .conf-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; }
-        .form-group.full-width { grid-column: 1 / -1; }
-        .conf-form label { font-weight: bold; margin-bottom: 5px; font-size: 14px; }
-        .conf-form input[type="text"], .conf-form input[type="tel"], .conf-form input[type="email"], .conf-form input[type="date"], .conf-form select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-        .error-msg { color: red; font-size: 12px; margin-top: 5px; display: none; }
-        .radio-group { display: flex; gap: 15px; align-items: center; margin-top: 5px; }
-        .submit-btn { grid-column: 1 / -1; background: #4CAF50; color: white; padding: 12px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
-        .submit-btn:hover { background: #45a049; }
-        #reportTopicGroup { display: none; grid-column: 1 / -1; }
-        
-        /* Стили таблицы */
-        .table-container { margin-top: 40px; }
-        .conf-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        .conf-table th, .conf-table td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 14px; }
-        .conf-table th { background: #333; color: white; }
-        .conf-table tr:nth-child(even) { background: #f9f9f9; }
-    </style>
 </head>
 <body>
-    <nav>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo-area">
+            <div class="logo-square"></div>
+            <div>
+                <h2 style="margin:0; font-weight:normal;">Портфолио<br>студента</h2>
+                <small style="font-size: 10px;">Выполнил: Завьялов М.Д.</small>
+            </div>
+        </div>
+        <div class="phones">
+            Группа: ПРОГ-С-24
+        </div>
+    </header>
+
+    <!-- Меню -->
+    <nav class="nav-bar">
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="conference.html">Конференция</a></li>
@@ -36,9 +30,11 @@
         </ul>
     </nav>
 
-    <main class="conf-container">
-        <h1 style="text-align: center; color: #333;">Регистрация участников конференции</h1>
+    <!-- Основной контент -->
+    <main class="main-content">
+        <h1>Регистрация участников конференции</h1>
         
+        <!-- Форма -->
         <form id="confForm" class="conf-form" novalidate>
             <div class="form-group">
                 <label>ФИО (только русские буквы)</label>
@@ -90,7 +86,8 @@
             <button type="submit" class="submit-btn">Отправить заявку</button>
         </form>
 
-        <div class="table-container">
+        <!-- Таблица участников -->
+        <div style="margin-top: 40px;">
             <h2 style="color: #333;">Список зарегистрированных участников</h2>
             <table class="conf-table">
                 <thead>
@@ -109,6 +106,25 @@
         </div>
     </main>
 
+    <!-- Подвал -->
+    <footer class="footer">
+        <div>
+            © 2026 Портфолио студента<br>
+            Группа ПРОГ-С-24
+        </div>
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="conference.html">Конференция</a>
+            <a href="task7.html">Шаблон</a>
+            <a href="gallery.html">Фотогалерея</a>
+        </div>
+        <div>
+            Разработка сайта —<br>
+            Завьялов М.Д.
+        </div>
+    </footer>
+
+    <!-- Скрипт (остался без изменений) -->
     <script>
         const form = document.getElementById('confForm');
         const repYes = document.getElementById('repYes');
@@ -116,7 +132,7 @@
         const reportTopicGroup = document.getElementById('reportTopicGroup');
         const usersTableBody = document.getElementById('usersTableBody');
 
-        // 1. Показ поля для темы доклада (Задание 1.1)
+        // 1. Показ поля для темы доклада
         repYes.addEventListener('change', () => { reportTopicGroup.style.display = 'flex'; });
         repNo.addEventListener('change', () => { reportTopicGroup.style.display = 'none'; });
 
@@ -124,7 +140,7 @@
         let users = JSON.parse(localStorage.getItem('confUsers')) || [];
         renderTable();
 
-        // 3. Валидация и отправка (Задание 1.2)
+        // 3. Валидация и отправка
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             let isValid = true;
@@ -173,7 +189,7 @@
             }
         });
 
-        // 4. Отрисовка таблицы (Задание 1.6)
+        // 4. Отрисовка таблицы
         function renderTable() {
             usersTableBody.innerHTML = '';
             users.forEach(user => {

@@ -1,109 +1,148 @@
-/* Общие стили */
+/* =========================================
+   ОБЩИЕ СТИЛИ (Шапка, Меню, Подвал, Фон)
+   ========================================= */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background: #e9e9e9; /* Светло-серый фон как на макете */
     margin: 0;
     padding: 0;
-}
-
-/* Меню навигации */
-nav {
-    background-color: #333;
-    padding: 10px 0;
-}
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-nav ul li a:hover {
-    color: #4CAF50;
-}
-
-/* Контент */
-main {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-h1 {
-    color: #2c3e50;
-    text-align: center;
-}
-
-/* Стили для анкеты */
-.survey-form {
     display: flex;
     flex-direction: column;
-}
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-}
-input[type="text"],
-input[type="password"],
-select,
-textarea {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-.submit-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.submit-btn:hover {
-    background-color: #45a049;
+    min-height: 100vh;
 }
 
-/* Стили для таблицы (Каталог) */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Шапка */
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 50px; 
+    background: #e9e9e9; 
+}
+.logo-area { display: flex; align-items: center; gap: 15px; color: #555; }
+.logo-square { width: 60px; height: 60px; background: #888; }
+.phones { text-align: right; font-size: 24px; color: #777; line-height: 1.2; }
+
+/* Горизонтальное меню */
+.nav-bar { background: #777; padding: 15px 0; }
+.nav-bar ul { 
+    list-style: none; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin: 0; 
+    padding: 0; 
+    flex-wrap: wrap; /* Чтобы меню не ломалось на телефонах */
+}
+.nav-bar a { color: white; text-decoration: none; font-size: 18px; }
+.nav-bar a:hover { text-decoration: underline; }
+
+/* Центральная рабочая область */
+.main-content { 
+    flex: 1; /* Прижимает подвал к низу */
+    max-width: 1000px; 
+    margin: 30px auto; 
+    padding: 30px; 
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 90%;
+    box-sizing: border-box;
+}
+.main-content h1 { margin-top: 0; color: #333; text-align: center;}
+
+/* Подвал */
+.footer { 
+    background: #777; 
+    color: white; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 30px 50px; 
+    font-size: 12px; 
+    margin-top: auto;
+}
+.footer a { color: white; text-decoration: none; display: block; margin-bottom: 5px; }
+.footer a:hover { text-decoration: underline; }
+
+
+/* =========================================
+   СТИЛИ ДЛЯ ФОРМ (Конференция, Анкета)
+   ========================================= */
+.conf-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group.full-width { grid-column: 1 / -1; }
+.conf-form label { font-weight: bold; margin-bottom: 5px; font-size: 14px; color: #333; }
+.conf-form input[type="text"], .conf-form input[type="tel"], .conf-form input[type="email"], .conf-form input[type="date"], .conf-form select { 
+    padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; 
+}
+.error-msg { color: red; font-size: 12px; margin-top: 5px; display: none; }
+.radio-group { display: flex; gap: 15px; align-items: center; margin-top: 5px; }
+.submit-btn { 
+    grid-column: 1 / -1; background: #777; color: white; padding: 12px; 
+    border: none; border-radius: 4px; font-size: 16px; cursor: pointer; 
+}
+.submit-btn:hover { background: #555; }
+#reportTopicGroup { display: none; grid-column: 1 / -1; }
+
+/* =========================================
+   СТИЛИ ДЛЯ ТАБЛИЦ (Каталог, Список участников)
+   ========================================= */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ddd; padding: 12px; text-align: left; font-size: 14px; }
+th { background-color: #777; color: white; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+
+
+/* =========================================
+   СТИЛИ ДЛЯ ГЛАВНОЙ (Круги как на макете)
+   ========================================= */
+.hero { 
+    position: relative; height: 300px; background: white; overflow: hidden; 
+    border-radius: 8px; margin-bottom: 30px; 
+}
+.circle { position: absolute; border-radius: 50%; opacity: 0.6; }
+.c1 { width: 250px; height: 250px; background: #c2c2f0; left: 5%; top: 10%; }
+.c2 { width: 180px; height: 180px; background: #d4f0c2; left: 20%; top: 5%; }
+.c3 { width: 220px; height: 220px; background: #f0d4c2; left: 35%; top: 15%; }
+.c4 { width: 150px; height: 150px; background: #c2e6f0; left: 60%; top: 20%; }
+.c5 { width: 200px; height: 200px; background: #f0c2e6; right: 5%; top: 5%; }
+
+/* Стили для Главной страницы (инфа о студенте) */
+.student-info p { font-size: 16px; line-height: 1.6; margin-bottom: 10px; }
+.student-info a { color: #777; font-weight: bold; }
+/* =========================================
+   СТИЛИ ДЛЯ ФОТОГАЛЕРЕИ (Задание 2)
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    /* Адаптивная сетка: карточки будут переноситься при сужении экрана */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
     margin-top: 20px;
 }
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для псевдокласса */
+    background: #fff;
 }
-th {
-    background-color: #4CAF50;
-    color: white;
+
+/* Использование псевдокласса :hover (за это дают доп. баллы) */
+.gallery-item:hover {
+    transform: translateY(-5px); /* Карточка немного приподнимается */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-td img {
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Изображение обрезается, чтобы заполнить карточку */
     display: block;
-    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Картинка внутри плавно увеличивается */
 }

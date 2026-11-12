@@ -6,7 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <nav>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo-area">
+            <div class="logo-square"></div>
+            <div>
+                <h2 style="margin:0; font-weight:normal;">Портфолио<br>студента</h2>
+                <small style="font-size: 10px;">Выполнил: Завьялов М.Д.</small>
+            </div>
+        </div>
+        <div class="phones">
+            Группа: ПРОГ-С-24
+        </div>
+    </header>
+
+    <!-- Меню -->
+    <nav class="nav-bar">
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="conference.html">Конференция</a></li>
@@ -14,9 +29,57 @@
             <li><a href="gallery.html">Фотогалерея</a></li>
         </ul>
     </nav>
-    <main>
-        <h1>Фотогалерея</h1>
-        <p>Здесь скоро появятся фотографии.</p>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <h1>Моя фотогалерея</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">Наведите курсор на любую фотографию, чтобы увидеть эффект.</p>
+
+        <!-- Сетка галереи -->
+        <div class="gallery-grid">
+            <!-- Карточка 1 -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=1" alt="Фотография 1">
+            </div>
+            <!-- Карточка 2 -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=2" alt="Фотография 2">
+            </div>
+            <!-- Карточка 3 -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=3" alt="Фотография 3">
+            </div>
+            <!-- Карточка 4 -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=4" alt="Фотография 4">
+            </div>
+            <!-- Карточка 5 -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=5" alt="Фотография 5">
+            </div>
+            <!-- Карточка 6 -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=6" alt="Фотография 6">
+            </div>
+        </div>
     </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div>
+            © 2026 Портфолио студента<br>
+            Группа ПРОГ-С-24
+        </div>
+        <div>
+            <a href="index.html">Главная</a>
+            <a href="conference.html">Конференция</a>
+            <a href="task7.html">Шаблон</a>
+            <a href="gallery.html">Фотогалерея</a>
+        </div>
+        <div>
+            Разработка сайта —<br>
+            Завьялов М.Д.
+        </div>
+    </footer>
 </body>
 </html>
